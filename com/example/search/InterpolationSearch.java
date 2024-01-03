@@ -1,8 +1,10 @@
+package com.example.search;
+
 // Interpolation Search
 public class InterpolationSearch {
     // Time Complexity: O(log log n) - Expected logarithmic time complexity for
     // uniformly distributed sorted arrays.
-    static int search(int[] array, int target) {
+    public static int search(int[] array, int target) {
         int low = 0;
         int high = array.length - 1;
 

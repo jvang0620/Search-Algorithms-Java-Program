@@ -1,8 +1,10 @@
+package com.example.search;
+
 // Jump Search
 public class JumpSearch {
     // Time Complexity: O(√n) - Square root of the array size, making it more
     // efficient than linear search.
-    static int search(int[] array, int target) {
+    public static int search(int[] array, int target) {
         int blockSize = (int) Math.sqrt(array.length);
         int start = 0;
 

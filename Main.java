@@ -1,5 +1,13 @@
-
 import java.util.Arrays;
+
+import com.example.search.BinarySearch;
+import com.example.search.ExponentialSearch;
+import com.example.search.FibonacciSearch;
+import com.example.search.HashingSearch;
+import com.example.search.InterpolationSearch;
+import com.example.search.JumpSearch;
+import com.example.search.LinearSearch;
+import com.example.search.TernarySearch;
 
 public class Main {
     public static void main(String[] args) {

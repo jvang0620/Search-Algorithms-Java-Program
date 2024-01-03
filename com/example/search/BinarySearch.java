@@ -1,8 +1,10 @@
+package com.example.search;
+
 public class BinarySearch {
     // Binary Search
     // Time Complexity: O(log n) - Logarithmic time complexity as it divides the
     // search space in half at each step.
-    static int search(int[] array, int target) {
+    public static int search(int[] array, int target) {
         int low = 0;
         int high = array.length - 1;
 

@@ -1,10 +1,12 @@
+package com.example.search;
+
 import java.util.Arrays;
 
 // Exponential Search
 public class ExponentialSearch {
     // Time Complexity: O(log n) - Logarithmic time complexity, similar to binary
     // search.
-    static int search(int[] array, int target) {
+    public static int search(int[] array, int target) {
         // Check if the target is at the first position
         if (array[0] == target) {
             return 0;

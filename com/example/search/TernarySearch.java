@@ -1,8 +1,10 @@
+package com.example.search;
+
 // Ternary Search
 public class TernarySearch {
     // Time Complexity: O(log3 n) - Logarithmic time complexity, dividing the search
     // space into three parts.
-    static int search(int[] array, int target) {
+    public static int search(int[] array, int target) {
         int low = 0;
         int high = array.length - 1;
 

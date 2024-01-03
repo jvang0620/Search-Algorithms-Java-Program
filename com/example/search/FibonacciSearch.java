@@ -1,8 +1,10 @@
+package com.example.search;
+
 // Fibonacci Search
 public class FibonacciSearch {
     // Time Complexity: O(log n) - Logarithmic time complexity, similar to binary
     // search.
-    static int search(int[] array, int target) {
+    public static int search(int[] array, int target) {
         int fibMMinus2 = 0;
         int fibMMinus1 = 1;
         int fibM = fibMMinus1 + fibMMinus2;
