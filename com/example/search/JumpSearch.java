@@ -13,8 +13,11 @@ public class JumpSearch {
             start += blockSize;
         }
 
+        // Adjust the start to prevent going below 0
+        int blockStart = Math.max(0, start - blockSize);
+
         // Perform linear search within the block
-        for (int i = start - blockSize; i < Math.min(start, array.length); i++) {
+        for (int i = blockStart; i < Math.min(start, array.length); i++) {
             if (array[i] == target) {
                 // Return the index if found
                 return i;

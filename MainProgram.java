@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
 
 // Import individual search algorithm classes
 import com.example.search.BinarySearch;
@@ -12,18 +14,24 @@ import com.example.search.TernarySearch;
 
 public class MainProgram {
     public static void main(String[] args) {
-        int[] sortedArray = { 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21 };
+        Scanner scanner = new Scanner(System.in);
 
-        int targetLinear = 13;
-        int targetBinary = 7;
-        int targetHashing = 17;
-        int targetInterpolation = 5;
-        int targetExponential = 21;
-        int targetJump = 9;
-        int targetFibonacci = 3;
-        int targetTernary = 15;
+        System.out.print("Enter the number of elements to generate: ");
+        int size = scanner.nextInt();
 
-        System.out.println("Original Sorted Array: " + Arrays.toString(sortedArray));
+        int[] sortedArray = generateRandomArray(size);
+
+        int targetLinear = 68;
+        int targetBinary = 87;
+        int targetHashing = 6;
+        int targetInterpolation = 45;
+        int targetExponential = 28;
+        int targetJump = 91;
+        int targetFibonacci = 34;
+        int targetTernary = 78;
+
+        /* COMMENT OUT or UNCOMMENT if you don't want to view the Generated Array */
+        // System.out.println("Original Sorted Array: " + Arrays.toString(sortedArray));
 
         measureSearchTime("Linear Search", () -> LinearSearch.search(sortedArray, targetLinear));
         measureSearchTime("Binary Search", () -> BinarySearch.search(sortedArray, targetBinary));
@@ -33,6 +41,23 @@ public class MainProgram {
         measureSearchTime("Jump Search", () -> JumpSearch.search(sortedArray, targetJump));
         measureSearchTime("Fibonacci Search", () -> FibonacciSearch.search(sortedArray, targetFibonacci));
         measureSearchTime("Ternary Search", () -> TernarySearch.search(sortedArray, targetTernary));
+
+        scanner.close();
+    }
+
+    // Generate a random array of size elements with values between 1 and 50
+    static int[] generateRandomArray(int size) {
+        Random random = new Random();
+        int[] array = new int[size];
+
+        for (int i = 0; i < size; i++) {
+            array[i] = random.nextInt(100) + 1; // Generates a random number between 1 and 100
+        }
+
+        /* COMMENT OUT or UNCOMMENT if you don't want to view the Generated Array */
+        // System.out.println("Generated Array: " + Arrays.toString(array));
+
+        return array;
     }
 
     // Measure search time
