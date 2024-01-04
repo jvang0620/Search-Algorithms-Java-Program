@@ -1,5 +1,6 @@
 import java.util.Arrays;
 
+// Import individual search algorithm classes
 import com.example.search.BinarySearch;
 import com.example.search.ExponentialSearch;
 import com.example.search.FibonacciSearch;
@@ -9,7 +10,7 @@ import com.example.search.JumpSearch;
 import com.example.search.LinearSearch;
 import com.example.search.TernarySearch;
 
-public class Main {
+public class MainProgram {
     public static void main(String[] args) {
         int[] sortedArray = { 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21 };
 
