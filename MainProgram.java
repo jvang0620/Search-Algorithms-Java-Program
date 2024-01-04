@@ -25,47 +25,40 @@ public class MainProgram {
 
         System.out.println("Original Sorted Array: " + Arrays.toString(sortedArray));
 
-        // Linear Search
-        int linearSearchResult = LinearSearch.search(sortedArray, targetLinear);
-        displaySearchResult("Linear Search", targetLinear, linearSearchResult);
+        measureSearchTime("Linear Search", () -> LinearSearch.search(sortedArray, targetLinear));
+        measureSearchTime("Binary Search", () -> BinarySearch.search(sortedArray, targetBinary));
+        measureSearchTime("Hashing (Hash Table Search)", () -> HashingSearch.search(sortedArray, targetHashing));
+        measureSearchTime("Interpolation Search", () -> InterpolationSearch.search(sortedArray, targetInterpolation));
+        measureSearchTime("Exponential Search", () -> ExponentialSearch.search(sortedArray, targetExponential));
+        measureSearchTime("Jump Search", () -> JumpSearch.search(sortedArray, targetJump));
+        measureSearchTime("Fibonacci Search", () -> FibonacciSearch.search(sortedArray, targetFibonacci));
+        measureSearchTime("Ternary Search", () -> TernarySearch.search(sortedArray, targetTernary));
+    }
 
-        // Binary Search
-        int binarySearchResult = BinarySearch.search(sortedArray, targetBinary);
-        displaySearchResult("Binary Search", targetBinary, binarySearchResult);
+    // Measure search time
+    static void measureSearchTime(String algorithm, SearchFunction searchFunction) {
+        long startTime = System.currentTimeMillis();
+        int result = searchFunction.search();
+        long endTime = System.currentTimeMillis();
 
-        // Hashing (Hash Table Search)
-        int hashingSearchResult = HashingSearch.search(sortedArray, targetHashing);
-        displaySearchResult("Hashing (Hash Table Search)", targetHashing, hashingSearchResult);
+        long executionTime = endTime - startTime;
+        displaySearchResult(algorithm, result);
+        System.out.println("Execution Time: " + executionTime + " milliseconds");
+        System.out.println();
+    }
 
-        // Interpolation Search
-        int interpolationSearchResult = InterpolationSearch.search(sortedArray, targetInterpolation);
-        displaySearchResult("Interpolation Search", targetInterpolation, interpolationSearchResult);
-
-        // Exponential Search
-        int exponentialSearchResult = ExponentialSearch.search(sortedArray, targetExponential);
-        displaySearchResult("Exponential Search", targetExponential, exponentialSearchResult);
-
-        // Jump Search
-        int jumpSearchResult = JumpSearch.search(sortedArray, targetJump);
-        displaySearchResult("Jump Search", targetJump, jumpSearchResult);
-
-        // Fibonacci Search
-        int fibonacciSearchResult = FibonacciSearch.search(sortedArray, targetFibonacci);
-        displaySearchResult("Fibonacci Search", targetFibonacci, fibonacciSearchResult);
-
-        // Ternary Search
-        int ternarySearchResult = TernarySearch.search(sortedArray, targetTernary);
-        displaySearchResult("Ternary Search", targetTernary, ternarySearchResult);
+    // Functional interface for search functions
+    interface SearchFunction {
+        int search();
     }
 
     // display search result
-    static void displaySearchResult(String algorithm, int target, int result) {
-        System.out.println(algorithm + " for target " + target + ":");
+    static void displaySearchResult(String algorithm, int result) {
+        System.out.println(algorithm + ":");
         if (result != -1) {
             System.out.println("Element found at index " + result);
         } else {
             System.out.println("Element not found");
         }
-        System.out.println();
     }
 }
