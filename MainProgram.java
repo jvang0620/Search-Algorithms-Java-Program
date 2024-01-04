@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-// Import individual search algorithm classes
+//import search algorithms
 import com.example.search.BinarySearch;
 import com.example.search.ExponentialSearch;
 import com.example.search.FibonacciSearch;
@@ -11,6 +11,9 @@ import com.example.search.InterpolationSearch;
 import com.example.search.JumpSearch;
 import com.example.search.LinearSearch;
 import com.example.search.TernarySearch;
+
+//import interface
+import helperInterface.SearchFunction;
 
 public class MainProgram {
     public static void main(String[] args) {
@@ -45,7 +48,7 @@ public class MainProgram {
         scanner.close();
     }
 
-    // Generate a random array of size elements with values between 1 and 50
+    // Generate a random array of size elements with values between 1 and 100
     static int[] generateRandomArray(int size) {
         Random random = new Random();
         int[] array = new int[size];
@@ -70,11 +73,6 @@ public class MainProgram {
         displaySearchResult(algorithm, result);
         System.out.println("Execution Time: " + executionTime + " milliseconds");
         System.out.println();
-    }
-
-    // Functional interface for search functions
-    interface SearchFunction {
-        int search();
     }
 
     // display search result
