@@ -1,4 +1,4 @@
-package com.example.search;
+package src.search_algorithms;
 
 // Fibonacci Search
 public class FibonacciSearch {

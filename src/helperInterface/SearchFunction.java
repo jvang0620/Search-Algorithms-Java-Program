@@ -1,6 +1,6 @@
 // Functional interface for search functions
 
-package helperInterface;
+package src.helperInterface;
 
 public interface SearchFunction {
     int search();

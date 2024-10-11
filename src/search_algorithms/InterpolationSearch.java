@@ -1,4 +1,4 @@
-package com.example.search;
+package src.search_algorithms;
 
 // Interpolation Search
 public class InterpolationSearch {

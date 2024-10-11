@@ -1,18 +1,17 @@
+package src;
+
 import java.util.Random;
 import java.util.Scanner;
 
-//import search algorithms
-import com.example.search.BinarySearch;
-import com.example.search.ExponentialSearch;
-import com.example.search.FibonacciSearch;
-import com.example.search.HashingSearch;
-import com.example.search.InterpolationSearch;
-import com.example.search.JumpSearch;
-import com.example.search.LinearSearch;
-import com.example.search.TernarySearch;
-
-//import interface
-import helperInterface.SearchFunction;
+import src.helperInterface.SearchFunction;
+import src.search_algorithms.BinarySearch;
+import src.search_algorithms.ExponentialSearch;
+import src.search_algorithms.FibonacciSearch;
+import src.search_algorithms.HashingSearch;
+import src.search_algorithms.InterpolationSearch;
+import src.search_algorithms.JumpSearch;
+import src.search_algorithms.LinearSearch;
+import src.search_algorithms.TernarySearch;
 
 public class MainProgram {
     public static void main(String[] args) {

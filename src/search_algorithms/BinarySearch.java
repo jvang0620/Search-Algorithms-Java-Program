@@ -1,4 +1,4 @@
-package com.example.search;
+package src.search_algorithms;
 
 public class BinarySearch {
     // Binary Search

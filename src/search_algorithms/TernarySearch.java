@@ -1,4 +1,4 @@
-package com.example.search;
+package src.search_algorithms;
 
 // Ternary Search
 public class TernarySearch {
